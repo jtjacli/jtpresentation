@@ -4,29 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Enhanced Canva-Friendly Meta Tags -->
-    <title>Our Global Footprint | Corporate Timeline</title>
-    <meta name="description" content="A 40-year journey of innovation from local woven labels to global RFID solutions.">
+    <!-- Essential Meta Tags for Canva/Social Embedding -->
+    <title>Corporate Journey | Our Global Footprint</title>
+    <meta name="description" content="A 40-year evolution of industrial excellence from Hong Kong origin to global RFID & DPP solutions.">
+    <link rel="canonical" href="https://jtjacli.github.io/jtpresentation/index.html" />
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph / Facebook (Improved for Canva) -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jtjacli.github.io/jtpresentation/">
-    <meta property="og:title" content="Our Global Footprint | Corporate Timeline">
-    <meta property="og:description" content="A 40-year journey of innovation from local woven labels to global RFID solutions.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&h=630&q=80">
+    <meta property="og:url" content="https://jtjacli.github.io/jtpresentation/index.html">
+    <meta property="og:title" content="Corporate Journey | Our Global Footprint">
+    <meta property="og:description" content="A 40-year evolution from local weaving to global RFID leadership.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&h=630&q=80">
+    <meta property="og:site_name" content="Corporate Timeline">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://jtjacli.github.io/jtpresentation/">
-    <meta property="twitter:title" content="Our Global Footprint | Corporate Timeline">
-    <meta property="twitter:description" content="A 40-year journey of innovation from local woven labels to global RFID solutions.">
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&h=630&q=80">
+    <meta property="twitter:url" content="https://jtjacli.github.io/jtpresentation/index.html">
+    <meta property="twitter:title" content="Corporate Journey | Our Global Footprint">
+    <meta property="twitter:description" content="A 40-year evolution from local weaving to global RFID leadership.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&h=630&q=80">
 
+    <!-- External Assets with Crossorigin -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; background-color: #f1f5f9; }
         
         .timeline-line {
             position: absolute;
@@ -43,8 +47,8 @@
 
         .animate-item {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform: translateY(20px);
+            transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .animate-item.active {
@@ -68,31 +72,19 @@
         }
     </style>
 </head>
-<body class="bg-slate-100 min-h-screen flex items-center justify-center p-4 md:p-8 relative">
+<body class="min-h-screen flex items-center justify-center p-4 md:p-8">
 
-    <div id="slide-container" class="bg-white w-full max-w-6xl rounded-xl shadow-xl overflow-hidden flex flex-col relative border border-slate-200 my-auto transition-all duration-500">
+    <!-- Main Slide Container -->
+    <div id="slide-container" class="bg-white w-full max-w-6xl rounded-2xl shadow-2xl overflow-hidden flex flex-col relative border border-slate-200 transition-all duration-700">
         
-        <div class="px-8 pt-10 pb-4 flex justify-between items-start">
+        <!-- Header -->
+        <div class="px-8 pt-12 pb-6 flex justify-between items-start">
             <div class="animate-item" id="header-text">
-                <p class="text-blue-600 font-bold tracking-wider text-xs uppercase mb-1">Our Global Footprint</p>
-                <h1 class="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
-                    40 Years of Evolution: From Local Woven Labels <br class="hidden md:block"> to <span class="text-blue-600">Global RFID & DPP Solutions</span>
+                <p class="text-blue-600 font-bold tracking-wider text-xs uppercase mb-2">Our Global Footprint</p>
+                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                    40 Years of Evolution: From Local Origin <br class="hidden md:block"> to <span class="text-blue-600 underline decoration-blue-200">Global Tech Solutions</span>
                 </h1>
             </div>
             
-            <div class="flex gap-2">
-                <button onclick="playAnimations()" class="bg-slate-100 hover:bg-slate-200 text-slate-600 px-4 py-2 rounded-full text-sm font-semibold transition-all flex items-center gap-2">
-                    <i class="fas fa-play"></i> <span>Play Animation</span>
-                </button>
-                <button onclick="toggleAIPanel()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg transition-all flex items-center gap-2">
-                    <span>✨ AI Assistant</span>
-                </button>
-            </div>
-        </div>
-
-        <div class="flex-grow px-8 py-10 relative">
-            <div class="w-full relative">
-                <div id="timeline-line" class="timeline-line hidden lg:block rounded-full scale-x-0"></div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 relative z-10">
-                    <div
+            <div class="flex gap-3">
+                <button onclick="play
