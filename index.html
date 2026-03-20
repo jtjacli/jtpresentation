@@ -4,33 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Essential Meta Tags for Canva/Social Embedding -->
-    <title>Corporate Journey | Our Global Footprint</title>
+    <!-- Professional Metadata for Canva Embedding -->
+    <title>Corporate Timeline | Our Global Footprint</title>
     <meta name="description" content="A 40-year evolution of industrial excellence from Hong Kong origin to global RFID & DPP solutions.">
     <link rel="canonical" href="https://jtjacli.github.io/jtpresentation/index.html" />
     
-    <!-- Open Graph / Facebook (Improved for Canva) -->
+    <!-- Favicon (Helps with embed recognition) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jtjacli.github.io/jtpresentation/index.html">
-    <meta property="og:title" content="Corporate Journey | Our Global Footprint">
-    <meta property="og:description" content="A 40-year evolution from local weaving to global RFID leadership.">
+    <meta property="og:title" content="Corporate Timeline | Our Global Footprint">
+    <meta property="og:description" content="Explore our 40-year journey from local weaving to global RFID leadership.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&h=630&q=80">
-    <meta property="og:site_name" content="Corporate Timeline">
+    <meta property="og:site_name" content="Our Global Footprint">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://jtjacli.github.io/jtpresentation/index.html">
-    <meta property="twitter:title" content="Corporate Journey | Our Global Footprint">
-    <meta property="twitter:description" content="A 40-year evolution from local weaving to global RFID leadership.">
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&h=630&q=80">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Corporate Timeline | Our Global Footprint">
+    <meta name="twitter:description" content="A 40-year evolution from local weaving to global RFID leadership.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&h=630&q=80">
 
-    <!-- External Assets with Crossorigin -->
+    <!-- External Assets -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; overflow-x: hidden; background-color: #f1f5f9; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; background-color: #f8fafc; margin: 0; }
         
         .timeline-line {
             position: absolute;
@@ -70,6 +72,11 @@
         @media (max-width: 1024px) {
             .timeline-line { display: none; }
         }
+        
+        /* Ensure content doesn't get cut in Canva iframe */
+        #slide-container {
+            min-height: auto;
+        }
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-4 md:p-8">
@@ -78,7 +85,7 @@
     <div id="slide-container" class="bg-white w-full max-w-6xl rounded-2xl shadow-2xl overflow-hidden flex flex-col relative border border-slate-200 transition-all duration-700">
         
         <!-- Header -->
-        <div class="px-8 pt-12 pb-6 flex justify-between items-start">
+        <div class="px-8 pt-10 pb-6 flex flex-col md:flex-row justify-between items-start gap-4">
             <div class="animate-item" id="header-text">
                 <p class="text-blue-600 font-bold tracking-wider text-xs uppercase mb-2">Our Global Footprint</p>
                 <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">
@@ -86,5 +93,19 @@
                 </h1>
             </div>
             
-            <div class="flex gap-3">
-                <button onclick="play
+            <div class="flex gap-3 shrink-0">
+                <button onclick="playAnimations()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-5 py-2.5 rounded-full text-sm font-bold transition-all flex items-center gap-2 border border-slate-200">
+                    <i class="fas fa-play text-blue-600"></i> <span>Replay</span>
+                </button>
+                <button onclick="toggleAIPanel()" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-xl transition-all flex items-center gap-2">
+                    <span>✨ AI Assistant</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="flex-grow px-8 py-10 relative">
+            <div class="w-full relative">
+                <div id="timeline-line" class="timeline-line hidden lg:block rounded-full scale-x-0"></div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid
